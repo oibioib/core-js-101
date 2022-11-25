@@ -377,7 +377,7 @@ function getCommonDirectoryPath(pathes) {
   const commonPath = ['/'];
 
   for (let i = 0; i < maxLengthPath.length; i += 1) {
-    if (pathesEdited.every((path) => path[i] !== maxLengthPath[i])) break;
+    if (!pathesEdited.every((path) => path[i] === maxLengthPath[i])) break;
     commonPath.push(`${maxLengthPath[i]}/`);
   }
 
